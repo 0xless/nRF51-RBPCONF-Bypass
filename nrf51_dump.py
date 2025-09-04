@@ -13,8 +13,8 @@ gdb_script_file = "dumper.gdb"
 # Run GDB in batch mode with the generated script
 subprocess.run([ARM_GDB_PATH, "-batch", "-x", gdb_script_file])
 
-# Parse r0_dump.txt and write binary firmware
-with open("r0_dump.txt", "r") as f_in, open(output_bin, "wb") as f_out:
+# Parse dump and write binary firmware
+with open(".tmp_fw_dump", "r") as f_in, open(output_bin, "wb") as f_out:
     for line in f_in:
         line = line.strip()
         if not line:

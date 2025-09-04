@@ -3,16 +3,18 @@ target remote localhost:3333
 # Reset target device
 monitor reset halt
 
+shell rm .tmp_fw_dump
+
 set pagination off
 set height 0
-set logging file r0_dump.txt
+set logging file .tmp_fw_dump
 set logging enabled on
 
 # Scan range in flash (Thumb instructions)
 # First instruction after vector table
 set $start = 0x80        
 # last flash address
-set $end   = 0x3FFFF     
+set $end   = 0x100     
 
 # Thumb halfword alignment
 set $step  = 2            
@@ -24,19 +26,7 @@ set $expected = 0x410CC200
 # While loop to detect a load operation
 set $i = $start
 while $i <= $end
-    set $r0 = $addr
-    set $r1 = $addr
-    set $r2 = $addr
-    set $r3 = $addr
-    set $r4 = $addr
-    set $r5 = $addr
-    set $r6 = $addr
-    set $r7 = $addr
-    set $r8 = $addr
-    set $r9 = $addr
-    set $r10 = $addr
-    set $r11 = $addr
-    set $r12 = $addr
+    set $r0=$r1=$r2=$r3=$r4=$r5=$r6=$r7=$r8=$r9=$r10=$r11=$r12=$addr
 
     set $pc = $i
     stepi
@@ -119,19 +109,7 @@ set $i = 0
 while $i <= $end
   set $pc = $pc - $step
   
-  set $r0 = $i
-  set $r1 = $i
-  set $r2 = $i
-  set $r3 = $i
-  set $r4 = $i
-  set $r5 = $i
-  set $r6 = $i
-  set $r7 = $i
-  set $r8 = $i
-  set $r9 = $i
-  set $r10 = $i
-  set $r11 = $i
-  set $r12 = $i
+  set $r0=$r1=$r2=$r3=$r4=$r5=$r6=$r7=$r8=$r9=$r10=$r11=$r12=$i
 
   stepi
 
