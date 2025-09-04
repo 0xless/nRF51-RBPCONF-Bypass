@@ -17,7 +17,7 @@ This repo contains:
 The highest protection available on nRF51 devices allows for SWD connections but no flash reads. By forcing register states and single-stepping the CPU, we hijack a load instruction in CR0 and abuse it to read arbitrary words from flash.
 Dumped words are logged to a file, parsed, and reassembled into a binary firmware image.
 
-For a detailed walkthrough of the vulnerability, see the related blog post at: [https://lessonsec.com/posts/nrf51-bypass/]([https://yourbloglink](https://lessonsec.com/posts/nrf51-bypass/).
+For a detailed walkthrough of the vulnerability, see the related blog post at: [https://lessonsec.com/posts/nrf51-bypass/](https://lessonsec.com/posts/nrf51-bypass/).
 
 ---
 
