@@ -3,7 +3,7 @@
 Proof-of-concept script to bypass **RBPCONF (Readback Protection)** on nRF51 MCUs and dump protected flash firmware over SWD.
 
 This repo contains:
-- A Python wrapper (`dump.py`) to run the process and parse results.
+- A Python wrapper (`nrf51_dump.py`) to run the process and parse results.
 - A GDB script (`dumper.gdb`) that automatically locates a usable load instruction and abuses it to read protected flash memory.
 
 > ⚠️ For educational and research purposes only. Do not use against hardware you don’t own or have explicit permission to test.
