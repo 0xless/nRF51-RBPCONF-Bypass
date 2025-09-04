@@ -6,6 +6,8 @@ This repo contains:
 - A Python wrapper (`nrf51_dump.py`) to run the process and parse results.
 - A GDB script (`dumper.gdb`) that automatically locates a usable load instruction and abuses it to read protected flash memory.
 
+  
+
 > ⚠️ For educational and research purposes only. Do not use against hardware you don’t own or have explicit permission to test.
 
 ---
