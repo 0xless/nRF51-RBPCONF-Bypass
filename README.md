@@ -42,7 +42,7 @@ For a detailed walkthrough of the vulnerability, see the related blog post at: [
    ```bash
    openocd -f interface/jlink.cfg -c "transport select swd" -f target/nrf51.cfg
    ```
-   Or adapt the command to user your favourite debugger.
+   Or adapt the command to use your favourite debugger.
 
 3. In another terminal, run the Python wrapper:
    ```bash
